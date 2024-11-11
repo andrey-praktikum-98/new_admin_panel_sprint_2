@@ -2,6 +2,7 @@ from django.contrib.postgres.aggregates import ArrayAgg
 from django.http import JsonResponse
 from django.views.generic.detail import BaseDetailView
 from django.views.generic.list import BaseListView
+from config.settings import PAGINATION_VALUE
 
 from movies.api.v1.services.filters_person import filter_role_person
 from movies.models import Filmwork, PersonFilmwork
@@ -32,7 +33,7 @@ class MoviesApiMixin:
 
 
 class MoviesListApi(MoviesApiMixin, BaseListView):
-    paginate_by = 50
+    paginate_by = PAGINATION_VALUE
 
     def get_context_data(self, *, object_list=None, **kwargs):
         queryset = self.get_queryset()

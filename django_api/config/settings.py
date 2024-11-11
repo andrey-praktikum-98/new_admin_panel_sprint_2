@@ -40,3 +40,4 @@ USE_TZ = True
 STATIC_URL = 'static/'
 LOCALE_PATHS = ['movies/locale']
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+PAGINATION_VALUE = 50
